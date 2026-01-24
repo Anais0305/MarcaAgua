@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ================= SEO ================= -->
+    <meta charset="UTF-8">
+    <title>Nosotros | MarcaAqua - Agua Natural de Manantial</title>
+    <meta name="description"
+        content="Conoce AquaVida, nuestra historia, misión y compromiso con la pureza del agua y el cuidado del medio ambiente en Perú.">
+    <meta name="keywords" content="AquaVida, agua natural, empresa de agua Perú, agua de manantial">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= FONTS ================= -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- ================= CSS ================= -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<STYle>
+    /* =====================================
+   HERO NOSOTROS (más angosto)
+===================================== */
+.hero-nosotros {
+    padding: 120px 8% 70px;
+    text-align: center;
+    color: #fff;
+    background:
+        linear-gradient(rgba(15,76,117,.75), rgba(15,76,117,.75)),
+        url("../img/nosotros-hero.jpg") center/cover no-repeat;
+}
+
+.hero-nosotros h2 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.hero-nosotros p {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    opacity: .9;
+}
+
+/* =====================================
+   NOSOTROS - HISTORIA
+===================================== */
+.nosotros {
+    background: #ffffff;
+}
+
+.nosotros-grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+}
+
+.nosotros-texto h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.nosotros-texto p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    opacity: .9;
+}
+
+.nosotros-img img {
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+}
+
+/* =====================================
+   MISIÓN / VISIÓN
+===================================== */
+.mision-vision {
+    display: grid;
+    gap: 30px;
+}
+
+.mision-vision .card {
+    background: #f9fcfd;
+    padding: 35px 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+.mision-vision h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #0f4c75;
+}
+
+/* =====================================
+   VALORES (reusa beneficios pero mejor)
+===================================== */
+.beneficios {
+    display: grid;
+    gap: 25px;
+}
+
+.benefi{
+    background: #ffffff;
+    padding: 28px 20px;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(0,0,0,.05);
+    transition: transform .3s ease;
+}
+
+.beneficio:hover {
+    transform: translateY(-6px);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (min-width: 768px) {
+
+    .hero-nosotros {
+        padding: 140px 12% 80px;
+    }
+
+    .nosotros-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mision-vision {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+</STYle>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>MarcaAqua</h1>
+        <!-- ☰ ICONO -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+    
+        <nav>
+            <ul id="nav-menu">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- ================= HERO NOSOTROS ================= -->
+    <section class="hero-nosotros" data-header="transparent">
+        <h2>Sobre MarcaAqua</h2>
+        <p>Comprometidos con la pureza, la salud y el cuidado del planeta</p>
+    </section>
+
+
+    <!-- ================= HISTORIA ================= -->
+    <section class="nosotros">
+        <div class="nosotros-grid">
+
+            <div class="nosotros-texto">
+                <h2>Nuestra historia</h2>
+                <p>
+                    MarcaAqua nace con el propósito de ofrecer agua natural de manantial,
+                    garantizando pureza, frescura y bienestar en cada gota.
+                </p>
+                <p>
+                    Desde nuestros inicios, trabajamos con altos estándares de calidad,
+                    tecnología moderna y un profundo respeto por el medio ambiente.
+                </p>
+            </div>
+
+            <div class="nosotros-img">
+                <img src="../assets/img/nosotros.jpg" alt="Manantial de agua AquaVida">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= MISION / VISION ================= -->
+    <section>
+        <div class="mision-vision">
+
+            <div class="card">
+                <h3>Misión</h3>
+                <p>
+                    Brindar agua de manantial segura y de alta calidad,
+                    contribuyendo al bienestar de las familias y empresas del Perú.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Visión</h3>
+                <p>
+                    Ser una marca líder en agua natural,
+                    reconocida por su excelencia, innovación y sostenibilidad.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= VALORES ================= -->
+    <section>
+        <h2>Nuestros valores</h2>
+
+        <div class="beneficios">
+            <div class="benefi">💧 Calidad</div>
+            <div class="benefi">🌱 Sostenibilidad</div>
+            <div class="benefi">🤝 Confianza</div>
+            <div class="benefi">🏔️ Origen natural</div>
+        </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section>
+        <h2>Comprometidos con tu bienestar</h2>
+        <p style="text-align:center; max-width:650px; margin:0 auto;">
+            Cada botella de MarcaAqua refleja nuestro compromiso con la salud,
+            el cuidado del planeta y la satisfacción de nuestros clientes.
+        </p>
+
+        <div style="text-align:center; margin-top:25px;">
+            <a href="../index.html#contacto" class="btn">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-grid">
+
+            <div>
+                <h3>MarcaAqua</h3>
+                <p>Agua natural de manantial en Perú.</p>
+            </div>
+
+            <div>
+                <h3>Enlaces</h3>
+                <p><a href="../index.html">Inicio</a></p>
+                <p><a href="nosotros.html">Nosotros</a></p>
+                <p><a href="productos.html">Productos</a></p>
+            </div>
+
+            <div>
+                <h3>Contacto</h3>
+                <p>📞 +51 999 999 999</p>
+                <p>✉️ contacto@MarcaAqua.pe</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 MarcaAqua. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- ================= WHATSAPP ================= -->
+    <a href="https://wa.me/51999999999" class="whatsapp" target="_blank">💬</a>
+
+    <!-- ================= JS ================= -->
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
