@@ -1,0 +1,1075 @@
+/*==========================================================================================
+  VARIABLES DE COLOR
+==========================================================================================*/
+:root {
+    --white: #ffffff;
+
+    /* ROJOS */
+    --red-primary: #c1121f;
+    /* rojo principal */
+    --red-soft: #e63946;
+    /* rojo suave */
+    --red-dark: #8b0000;
+    /* rojo oscuro */
+
+    /* GRISES */
+    --gray-dark: #2b2b2b;
+    --gray-medium: #6b6b6b;
+    --gray-light: #f2f2f2;
+    --gray-border: #e0e0e0;
+}
+
+/* ==================================================
+   RESET & BASE
+================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray-dark);
+
+    /* Fondo con profundidad (no blanco plano) */
+    background: linear-gradient(180deg,
+            var(--gray-light) 0%,
+            var(--white) 60%,
+            #fafafa 100%);
+
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gray-dark);
+}
+
+p {
+    color: var(--gray-medium);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 14px;
+}
+
+/* ==================================================
+   SECCIONES (alternancia elegante)
+================================================== */
+section {
+    padding: 80px 10%;
+}
+
+/* Secciones claras con leve gris */
+section:nth-child(even) {
+    background: linear-gradient(180deg,
+            var(--white),
+            var(--gray-light));
+}
+
+/* Secciones blancas limpias */
+section:nth-child(odd) {
+    background-color: var(--white);
+}
+
+/* ==================================================
+   BOTONES
+================================================== */
+button,
+.btn {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.btn,
+form button {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--white);
+
+    /* Rojo elegante con profundidad */
+    background: linear-gradient(135deg,
+            var(--red-primary),
+            var(--red-soft));
+
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn:hover,
+form button:hover {
+    background: linear-gradient(135deg,
+            var(--red-soft),
+            var(--red-primary));
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(193, 18, 31, 0.35);
+}
+
+/* ==================================================
+   SECCIONES GENERALES
+================================================== */
+section {
+    padding: 80px 20px;
+    position: relative;
+}
+
+section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+
+    /* Gris oscuro con acento rojo */
+    color: var(--gray-dark);
+    position: relative;
+}
+
+/* Línea decorativa bajo títulos */
+section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--red-primary);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+#inicio {
+    min-height: calc(100vh - 70px);
+    padding: 110px 20px 60px;
+    text-align: center;
+    color: var(--white);
+
+    /* Hero en gris con overlay elegante */
+    background:
+        linear-gradient(rgba(43, 43, 43, 0.75),
+            rgba(43, 43, 43, 0.75)),
+        url("../img/hero.png") center / cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inicio h2 {
+    font-size: 2.6rem;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+#inicio p {
+    color: #f0f0f0;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+/* ================= HEADER & NAV ================= */
+
+/* HEADER BASE */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* Blanco + blur elegante */
+    background: rgba(255, 255, 255, 0.88);
+    border-bottom: 1px solid var(--gray-border);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+    z-index: 1000;
+}
+
+/* LOGO */
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--red-primary);
+}
+/* LOGO */
+.logo img {
+    height: 38px;
+    /* tamaño ideal para header */
+    width: auto;
+    /* mantiene proporción */
+    display: block;
+}
+
+/* ================= HEADER STATES (JS) ================= */
+header.scrolled,
+header.blue {
+    background: var(--gray-dark);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+header.dark {
+    background: rgba(43, 43, 43, 0.95);
+}
+
+/* LOGO COLOR ON DARK */
+header.scrolled h1,
+header.blue h1,
+header.dark h1 {
+    color: var(--white);
+}
+
+/* ================= NAV DESKTOP ================= */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--gray-dark);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline elegante */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--red-primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--red-primary);
+}
+
+/* NAV COLOR EN HEADER OSCURO */
+header.scrolled nav a,
+header.blue nav a,
+header.dark nav a {
+    color: var(--white);
+}
+
+/* ================= MENU TOGGLE (MOBILE) ================= */
+.menu-toggle {
+    width: 34px;
+    height: 22px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background: var(--gray-dark);
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* Toggle color on dark header */
+header.scrolled .menu-toggle span,
+header.blue .menu-toggle span,
+header.dark .menu-toggle span {
+    background: var(--red-primary);
+}
+
+/* ================= ANIMATION ☰ → ✕ ================= */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+/* ================= MOBILE NAV ================= */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        height: 100vh;
+
+        /* Rojo + gris oscuro (más elegante) */
+        background: linear-gradient(180deg,
+                var(--gray-dark),
+                var(--red-dark));
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+
+        transition: right 0.4s ease;
+        z-index: 1050;
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: var(--white);
+    }
+
+    nav ul li a::after {
+        background: var(--red-soft);
+    }
+          .logo img {
+              height: 32px;
+          }
+        
+
+}
+
+/* ================= DESKTOP SPACING ================= */
+@media (min-width: 768px) {
+    header {
+        padding: 18px 8%;
+    }
+}
+/*=============================================================================*/
+/*============================BENEFICIOS=========================================*/
+/*=============================================================================*/
+/* ================= BENEFICIOS ================= */
+/* ================= BENEFICIOS ================= */
+.beneficios {
+    display: grid;
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.benefici {
+    position: relative;
+    padding: 30px 24px;
+    text-align: center;
+    border-radius: 22px;
+    background: linear-gradient(180deg,
+            var(--white),
+            #fafafa);
+    border: 1px solid var(--gray-border);
+    color: var(--gray-dark);
+    font-weight: 500;
+    font-size: 1rem;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+    overflow: hidden;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Onda decorativa tipo agua */
+.benefici::before {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: -25px;
+    width: 150%;
+    height: 65px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+}
+
+/* Hover */
+.benefici:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+/* Emoji / icono */
+.benefici span {
+    display: block;
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+    color: var(--red-primary);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .beneficios {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*=============================================================================
+   ================= FOOTER =================
+=============================================================================*/
+footer {
+    position: relative;
+    background: linear-gradient(180deg,
+            var(--gray-dark),
+            #1a1a1a);
+    color: var(--white);
+    padding: 80px 20px 30px;
+    overflow: hidden;
+}
+
+/* Onda decorativa superior */
+footer::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: var(--white);
+    border-radius: 0 0 50% 50%;
+}
+
+/* GRID */
+.footer-grid {
+    display: grid;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* TITULOS */
+.footer-grid h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: var(--white);
+}
+
+/* TEXTO */
+.footer-grid p,
+.footer-grid a {
+    font-size: 0.95rem;
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+/* LINKS */
+.footer-grid a {
+    display: inline-block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-grid a:hover {
+    color: var(--red-soft);
+    transform: translateX(6px);
+}
+
+/* ICONOS */
+.footer-grid span {
+    margin-right: 8px;
+    color: var(--red-soft);
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 40px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/*=============================================================================
+   ================= RESEÑAS =================
+=============================================================================*/
+.reseñas {
+    display: grid;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+
+    background: linear-gradient(180deg,
+            var(--white),
+            var(--gray-light));
+
+    border-left: 6px solid var(--red-primary);
+    padding: 30px 24px;
+    border-radius: 18px;
+}
+
+.reseña {
+    background: var(--white);
+    padding: 26px 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reseña:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.reseña p {
+    font-style: italic;
+    margin-bottom: 12px;
+    color: var(--gray-medium);
+}
+
+/* Estrellas */
+.reseña span {
+    color: var(--red-soft);
+    font-size: 1.15rem;
+}
+
+/* Grid desktop */
+@media (min-width: 768px) {
+    .reseñas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*=============================================================================
+   BENEFICIO DESTACADO
+=============================================================================*/
+.beneficio {
+    background: linear-gradient(135deg,
+            var(--red-primary),
+            var(--red-dark));
+    color: var(--white);
+    font-weight: 500;
+}
+
+/*=============================================================================
+   NUESTRA ESENCIA
+=============================================================================*/
+.grid-2 {
+    display: grid;
+    gap: 30px;
+    align-items: center;
+}
+
+.grid-2 p {
+    font-size: 1.05rem;
+    color: var(--gray-medium);
+}
+
+/* Imagen */
+.essence-img {
+    max-width: 380px;
+    margin: auto;
+    border-radius: 18px;
+    border: 4px solid var(--red-soft);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+/*=============================================================================
+   PRODUCTOS – SLIDER
+=============================================================================*/
+.productos-slider {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.productos-track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.6s ease;
+}
+
+.producto {
+    min-width: 100%;
+    padding: 24px 20px;
+    text-align: center;
+    border-radius: 18px;
+
+    background: linear-gradient(180deg,
+            var(--white),
+            #fafafa);
+
+    border: 1px solid var(--gray-border);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.producto:hover {
+    background: linear-gradient(180deg,
+            var(--gray-light),
+            var(--white));
+    transform: translateY(-4px);
+}
+
+.producto img {
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 14px;
+}
+
+.producto h3 {
+    color: var(--gray-dark);
+}
+/* ==================================================
+   FORMULARIO
+================================================== */
+form {
+    max-width: 520px;
+    margin: auto;
+    padding: 28px 26px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    background: linear-gradient(180deg,
+            var(--white),
+            var(--gray-light));
+
+    border-radius: 22px;
+    border: 1px solid var(--gray-border);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+input,
+textarea {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--gray-border);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: var(--gray-dark);
+
+    background: var(--white);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--gray-medium);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--red-primary);
+    box-shadow: 0 0 0 3px rgba(193, 18, 31, 0.15);
+}
+
+textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+/* ==================================================
+   RESPONSIVE GLOBAL (MOBILE FIRST)
+================================================== */
+
+/* GRID */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* PRODUCTOS */
+.producto {
+    min-width: 100%;
+}
+
+/* BENEFICIOS */
+.beneficios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* FOOTER */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+@media (min-width: 768px) {
+
+    body {
+        padding-top: 90px;
+    }
+
+    section {
+        padding: 90px 8%;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .producto {
+        min-width: calc(100% / 2);
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+    }
+}
+
+/* ==================================================
+   DESKTOP
+================================================== */
+@media (min-width: 1024px) {
+
+    section {
+        padding: 100px 10%;
+    }
+
+    .producto {
+        min-width: calc(100% / 3);
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+          .logo img {
+              height: 44px;
+          }
+}
+/* ======================================================================
+   ===================== PRODUCTOS CSS =====================
+====================================================================== */
+
+/* ================= BASE ================= */
+section {
+    padding: 80px 8%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gray-dark);
+}
+
+/* ================= SECCIONES ================= */
+.section-soft {
+    background: var(--white);
+}
+
+.section-light {
+    background: linear-gradient(180deg,
+            var(--gray-light),
+            var(--white));
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    color: var(--gray-medium);
+    opacity: 0.9;
+}
+
+/* ================= PRODUCTOS ================= */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+}
+
+.producto {
+    background: linear-gradient(180deg,
+            var(--white),
+            #fafafa);
+    border-radius: 20px;
+    padding: 26px 24px;
+    text-align: center;
+
+    border: 1px solid var(--gray-border);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.16);
+}
+
+.producto img {
+    width: 100%;
+    max-width: 220px;
+    margin-bottom: 15px;
+}
+
+.producto h3 {
+    margin-bottom: 8px;
+}
+
+/* ================= BENEFICIOS ================= */
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.beneficio {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 30px 22px;
+    text-align: center;
+
+    border: 1px solid var(--gray-border);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease;
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+}
+
+.beneficio span {
+    font-size: 2rem;
+    color: var(--red-primary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ================= CTA ================= */
+.cta {
+    text-align: center;
+    color: var(--white);
+
+    background: linear-gradient(135deg,
+            var(--red-primary),
+            var(--red-dark));
+}
+
+.cta h2,
+.cta p {
+    color: var(--white);
+}
+
+.cta .btn {
+    margin-top: 20px;
+}
+
+/* ======================================================================
+   ===================== NOSOTROS CSS =====================
+====================================================================== */
+
+/* ================= HERO NOSOTROS ================= */
+.hero-nosotros {
+    padding: 120px 8% 70px;
+    text-align: center;
+    color: var(--white);
+
+    background:
+        linear-gradient(rgba(43, 43, 43, 0.75),
+            rgba(193, 18, 31, 0.75)),
+        url("../img/nosotros-hero.jpg") center / cover no-repeat;
+}
+
+.hero-nosotros h2 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero-nosotros p {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    opacity: 0.9;
+    color: #f2f2f2;
+}
+
+/* ======================================================================
+   NOSOTROS - HISTORIA
+====================================================================== */
+.nosotros {
+    background: #ffffff;
+}
+
+.nosotros-grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+}
+
+.nosotros-texto h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.nosotros-texto p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    opacity: .9;
+}
+
+.nosotros-img img {
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .12);
+}
+
+/* ======================================================================
+   MISIÓN / VISIÓN
+====================================================================== */
+.mision-vision {
+    display: grid;
+    gap: 30px;
+}
+
+.mision-vision .card {
+    background: #f9fcfd;
+    padding: 35px 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .06);
+}
+
+.mision-vision h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #0f4c75;
+}
+
+/* ======================================================================
+   RESPONSIVE - TABLET
+====================================================================== */
+@media (min-width: 768px) {
+
+    body {
+        padding-top: 90px;
+    }
+
+    section {
+        padding: 90px 8%;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .producto {
+        min-width: calc(100% / 2);
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+    }
+
+    .hero-nosotros {
+        padding: 140px 12% 80px;
+    }
+
+    .nosotros-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mision-vision {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ======================================================================
+   RESPONSIVE - DESKTOP
+====================================================================== */
+@media (min-width: 1024px) {
+
+    section {
+        padding: 100px 10%;
+    }
+
+    .producto {
+        min-width: calc(100% / 3);
+    }
+
+    .beneficios {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

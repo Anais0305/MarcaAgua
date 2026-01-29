@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ================= SEO ================= -->
+    <meta charset="UTF-8">
+    <title>Contacto | MarcaAqua - Agua Natural de Manantial</title>
+    <meta name="description"
+        content="Contáctanos para pedidos de agua, bidones y distribución. AquaVida, agua natural de manantial en Perú.">
+    <meta name="keywords" content="contacto AquaVida, pedidos de agua, bidones de agua Perú">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= FONTS ================= -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- ================= CSS ================= -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<style>
+    /* =====================================
+   HERO CONTACTO
+===================================== */
+.hero-contacto {
+    padding: 120px 8% 70px;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(rgba(15,76,117,.8), rgba(15,76,117,.8)),
+        url("../img/contacto-hero.jpg") center/cover no-repeat;
+}
+
+.hero-contacto h2 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.hero-contacto p {
+    max-width: 600px;
+    margin: auto;
+    opacity: .9;
+}
+
+/* =====================================
+   CONTACTO
+===================================== */
+.contacto {
+    background: #ffffff;
+}
+
+.contacto-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contacto-info {
+    background: linear-gradient(180deg, #f4fbfe, #ffffff);
+    padding: 40px 30px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.contacto-info h2 {
+    margin-bottom: 15px;
+}
+
+.contacto-datos {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.contacto-datos li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* FORM */
+.contacto-form {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.contacto-form h2 {
+    margin-bottom: 20px;
+}
+
+.contacto-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contacto-form textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+/* =====================================
+   MAPA
+===================================== */
+.ubicacion .mapa {
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,.1);
+}
+
+.ubicacion iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (min-width: 768px) {
+
+    .hero-contacto {
+        padding: 140px 12% 80px;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+</style>
+<body>
+
+    <!-- ================= HEADER ================= -->
+<header>
+    <h1>MarcaAqua</h1>
+    <!-- ☰ ICONO -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+    <nav>
+        <ul id="nav-menu">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+    </nav>
+</header>
+
+
+    <!-- ================= HERO ================= -->
+<!-- ================= HERO CONTACTO ================= -->
+<section class="hero-contacto">
+    <h2>Hablemos</h2>
+    <p>Estamos listos para atender tu pedido o consulta</p>
+</section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="contacto">
+        <div class="contacto-grid">
+    
+            <!-- INFO -->
+            <div class="contacto-info">
+                <h2>Información de contacto</h2>
+    
+                <ul class="contacto-datos">
+                    <li>📍 Lima, Perú</li>
+                    <li>📞 +51 999 999 999</li>
+                    <li>✉️ contacto@MarcaAqua.pe</li>
+                    <li>⏰ Lunes a Sábado: 8:00 am – 6:00 pm</li>
+                </ul>
+    
+                <a href="https://wa.me/51999999999" class="btn" target="_blank">
+                    Hablar por WhatsApp
+                </a>
+            </div>
+    
+            <!-- FORM -->
+            <div class="contacto-form">
+                <h2>Envíanos un mensaje</h2>
+    
+                <form>
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <input type="tel" placeholder="Teléfono">
+                    <textarea placeholder="Escribe tu mensaje" required></textarea>
+    
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+            </div>
+    
+        </div>
+    </section>
+
+
+    <!-- ================= MAPA ================= -->
+<section class="ubicacion">
+    <h2>Nuestra ubicación</h2>
+
+    <div class="mapa">
+        <iframe src="https://www.google.com/maps?q=Lima,Peru&output=embed" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-grid">
+
+            <div>
+                <h3>MarcaAqua</h3>
+                <p>Agua natural de manantial en Perú.</p>
+            </div>
+
+            <div>
+                <h3>Enlaces</h3>
+                <p><a href="../index.html">Inicio</a></p>
+                <p><a href="nosotros.html">Nosotros</a></p>
+                <p><a href="productos.html">Productos</a></p>
+            </div>
+
+            <div>
+                <h3>Contacto</h3>
+                <p>📞 +51 999 999 999</p>
+                <p>✉️ contacto@MarcaAqua.pe</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 MarcaAqua. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- ================= WHATSAPP FLOAT ================= -->
+    <a href="https://wa.me/51999999999" class="whatsapp" target="_blank">💬</a>
+
+    <!-- ================= JS ================= -->
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
